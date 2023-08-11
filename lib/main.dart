@@ -91,13 +91,53 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Row(children: [
                 Container(
-                    margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                    margin: EdgeInsets.fromLTRB(20, 10, 0, 5),
                     child: Text("Today's Status ",
                       style: TextStyle(
                       color: Colors.white,fontSize: 20
                     ),))
-              ],)
+              ],),
+              SizedBox(
+                height: 60,
+                width: 380,
+                child: Card(
+                  child: Row(
+                    children: [
+                      SizedBox(width: 20,),
+                      Icon(Icons.fastfood_outlined,size: 32,),
+                      SizedBox(width: 10,),
+                      Column(
+                        children: [
+                          SizedBox(height: 12,),
+                          Text("  data",style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15
+                          ),),
+                          Text("  data",style: TextStyle(
+                            fontWeight: FontWeight.w300
+                          ),)
+                        ],
+                      ),
+                      SizedBox(width: 180,),
+
+                     CircularProgressIndicator(
+                          color: Colors.black,
+                          backgroundColor: Colors.grey,
+                          value: 0.5,
+
+                        ),
+
+
+
+
+                    ],
+                  ),
+
+                ),
+              ),
+
             ],
+
 
           ),
         )
