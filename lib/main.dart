@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Container(
               margin: EdgeInsets.fromLTRB(45, 0, 0, 0),
               child: Text("Good Morning Omer")),
-          backgroundColor: Colors.greenAccent,
+          backgroundColor: Colors.blueGrey,
           bottomOpacity: 0,
           elevation: 0.0,
           actions: [
@@ -53,27 +53,53 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        backgroundColor: Colors.greenAccent,
-        body:Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image:  AssetImage('assets/images/profil.jpeg'),
-                        fit: BoxFit.fill
-                    ),
-                  ),
-                )
-              ],
-            )
-          ],
 
+        body:Container(
+          color: Colors.blueGrey,
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image:  AssetImage('assets/images/profil.jpeg'),
+                          fit: BoxFit.fill
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                height: 150.0,
+                width: 380.0,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.blue,
+                    image:  DecorationImage(
+                        image: AssetImage(
+                            "assets/images/doga.jpg"),
+                        fit: BoxFit.fill)),
+                child: const Center(
+                  child: Text('Düzelticek',style: TextStyle(color: Colors.white),),
+                ),
+              ),
+              Row(children: [
+                Container(
+                    margin: EdgeInsets.fromLTRB(20, 10, 0, 0),
+                    child: Text("Today's Status ",
+                      style: TextStyle(
+                      color: Colors.white,fontSize: 20
+                    ),))
+              ],)
+            ],
+
+          ),
         )
 
     );
