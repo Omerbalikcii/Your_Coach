@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:your_coach/food.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  foodCardProperties foodCard =new foodCardProperties();
+
 
 
   @override
@@ -212,7 +216,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),),
                 ),
               ),
-              Row(children: [
+              Row(
+                children: [
                 Container(
                     margin: EdgeInsets.fromLTRB(20, 10, 0, 5),
                     child: Text("Today's Status ",
@@ -246,10 +251,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontWeight: FontWeight.bold,
                               fontSize: 15
                             ),),
-                            Text("  1800 of 1800 calories consumed",style: TextStyle(
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12
-                            ),)
+                              Row(
+                                children: [
+                                  Text("   ${foodCard.calori*18}",style: TextStyle(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 12,
+                                    color: foodCard.currentColor
+                                  ),),
+                                  Text(" of 1800 calories consumed",style: TextStyle(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 12
+                                  ),)
+                                ],
+                              )
                           ],
                         ),
                       ),
@@ -261,23 +275,47 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 40,
                               child: new CircularProgressIndicator(
                                 strokeWidth: 3,
-                                value: 0.5,
-                                color: Colors.black,
+                                value: foodCard.caloriBar,
+                                color: foodCard.currentColor,
                                 backgroundColor: Colors.grey,
 
 
                               ),
                             ),
                           ),
-                          Center(child: Text("  50%")),
+                          Center(
+                              child: Text("    ${foodCard.calori}%",
+                              style: TextStyle(
+                                fontSize: 11
+                              ),)),
                         ],
                       ),
                       SizedBox(width: 17,),
                       Column(
                         children: [
                           SizedBox(height: 2,),
-                          Icon(Icons.add_circle),
-                          Icon(Icons.remove_circle_outlined)
+                          GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  foodCard.add();
+                                  foodCard.caloriBarAdd();
+                                  foodCard.calori=foodCard.calori+5;
+                                });
+                              },
+                              child: Icon(Icons.add_circle)),
+                          GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  foodCard.caloriBarRemove();
+                                  foodCard.remove();
+                                  if(foodCard.calori>=5){
+                                    foodCard.calori=foodCard.calori-5;
+
+                                  }
+                                });
+                              },
+                              child: Icon(Icons.remove_circle_outlined)),
+
                         ],
                       )
                     ],
@@ -337,7 +375,11 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          Center(child: Text("  50%")),
+                          Center(
+                              child: Text("   100%",
+                                style: TextStyle(
+                                  fontSize: 12
+                                ),)),
                         ],
                       ),
                       SizedBox(width: 17,),
