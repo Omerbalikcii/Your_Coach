@@ -1,39 +1,41 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class foodCardProperties{
-  int calori =0;
-  int foodCalori=0;
+class SporCardProperties{
+  int sporHours =0;
   Color currentColor=Colors.green;
-  double caloriBar=0.00;
+  double sporBar=0.00;
 
   void add(){
-    if(calori>=100){
+    if(sporHours>=2.1){
       currentColor=Colors.red;
     }else{
       currentColor=Colors.green;
     }
   }
 
-  void caloriBarAdd(){
+  void hourseBarAdd(){
 
-    caloriBar=caloriBar+0.05;
+    sporBar=sporBar+0.5;
+    sporHours=sporHours+1;
   }
 
-  void caloriBarRemove(){
-    if(caloriBar>=0.047){
-      caloriBar=caloriBar-0.05;
+  void hourseBarRemove(){
+    if(sporBar>=0.047){
+      sporBar=sporBar-0.5;
+      sporHours=sporHours-1;
+
 
     }
   }
 
   void remove(){
-    if(calori>105){
+    if(sporHours>2.1){
       currentColor=Colors.red;
     }else{
       currentColor=Colors.green;
     }
   }
 
-}
 
+}

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:your_coach/food.dart';
+import 'package:your_coach/sleepCard.dart';
+import 'package:your_coach/sporCard.dart';
+import 'package:your_coach/waterCard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,9 +30,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  foodCardProperties foodCard =new foodCardProperties();
-
-//test
+  foodCardProperties foodCard = new foodCardProperties();
+  SporCardProperties sporCard = new SporCardProperties();
+  SleepCardProperties sleepCard = new SleepCardProperties();
+  WaterCardProperties waterCard = new WaterCardProperties();
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
         drawer: Drawer(
+
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
@@ -80,95 +85,151 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     )),
               ),
-              ListTile(
-                title: Text("  Chest Muscle",
-                  style: TextStyle(
-                    fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 50,
-                    child: Image.asset("assets/images/gogus.png")) ,
-                trailing: Icon(Icons.help),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Container(
+
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    title: Text("  Chest Muscle",
+                      style: TextStyle(
+                        fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 50,
+                        child: Image.asset("assets/images/gogus.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
+                ),
               ),
-              ListTile(
-                title: Text("  Back Muscle",
-                  style: TextStyle(
-                      fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 50,
-                    child: Image.asset("assets/images/sırt.png")) ,
-                trailing: Icon(Icons.help),
+              SizedBox(height: 1,),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Container(
+
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    title: Text("  Back Muscle",
+                      style: TextStyle(
+                          fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 50,
+                        child: Image.asset("assets/images/sırt.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
+                ),
               ),
-              ListTile(
-                title: Text("   Triceps muscle",
-                  style: TextStyle(
-                      fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 45,
-                    child: Image.asset("assets/images/arkakol.png")) ,
-                trailing: Icon(Icons.help),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Container(
+
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(10),
+
+                    ),
+                    title: Text("   Triceps muscle",
+                      style: TextStyle(
+                          fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 45,
+                        child: Image.asset("assets/images/arkakol.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
+                ),
               ),
-              ListTile(
-                title: Text("   Biceps Muscle",
-                  style: TextStyle(
-                      fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 45,
-                    child: Image.asset("assets/images/onkol.png")) ,
-                trailing: Icon(Icons.help),
+              Container(
+                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+
+                child: ListTile(
+                  title: Text("   Biceps Muscle",
+                    style: TextStyle(
+                        fontSize: 17
+                    ),),
+                  leading:Container(
+                      height: 45,
+                      child: Image.asset("assets/images/onkol.png")) ,
+                  trailing: Icon(Icons.help),
+                ),
               ),
-              ListTile(
-                title: Text("  Shoulder Muscle",
-                  style: TextStyle(
-                      fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 50,
-                    child: Image.asset("assets/images/omuz.png")) ,
-                trailing: Icon(Icons.help),
+              Container(
+                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+
+                child: ListTile(
+                  title: Text("  Shoulder Muscle",
+                    style: TextStyle(
+                        fontSize: 17
+                    ),),
+                  leading:Container(
+                      height: 50,
+                      child: Image.asset("assets/images/omuz.png")) ,
+                  trailing: Icon(Icons.help),
+                ),
               ),
-              ListTile(
-                title: Text("  Leg Muscle",
-                  style: TextStyle(
-                      fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 50,
-                    child: Image.asset("assets/images/bacak.png")) ,
-                trailing: Icon(Icons.help),
+              Container(
+                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+
+                child: ListTile(
+                  title: Text("  Leg Muscle",
+                    style: TextStyle(
+                        fontSize: 17
+                    ),),
+                  leading:Container(
+                      height: 50,
+                      child: Image.asset("assets/images/bacak.png")) ,
+                  trailing: Icon(Icons.help),
+                ),
               ),
-              ListTile(
-                title: Text("  Hip Muscle",
-                  style: TextStyle(
-                      fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 50,
-                    child: Image.asset("assets/images/hips.png")) ,
-                trailing: Icon(Icons.help),
+              Container(
+                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+
+                child: ListTile(
+                  title: Text("  Hip Muscle",
+                    style: TextStyle(
+                        fontSize: 17
+                    ),),
+                  leading:Container(
+                      height: 50,
+                      child: Image.asset("assets/images/hips.png")) ,
+                  trailing: Icon(Icons.help),
+                ),
               ),
-              ListTile(
-                title: Text("  Core Muscle",
-                  style: TextStyle(
-                      fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 45,
-                    child: Image.asset("assets/images/karın.png")) ,
-                trailing: Icon(Icons.help),
+              Container(
+                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+
+                child: ListTile(
+                  title: Text("  Core Muscle",
+                    style: TextStyle(
+                        fontSize: 17
+                    ),),
+                  leading:Container(
+                      height: 45,
+                      child: Image.asset("assets/images/karın.png")) ,
+                  trailing: Icon(Icons.help),
+                ),
               ),
-              ListTile(
-                title: Text("  Cardio Coach",
-                  style: TextStyle(
-                      fontSize: 17
-                  ),),
-                leading:Container(
-                    height: 45,
-                    child: Image.asset("assets/images/kardio.png")) ,
-                trailing: Icon(Icons.help),
+              Container(
+                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+
+                child: ListTile(
+                  title: Text("  Cardio Coach",
+                    style: TextStyle(
+                        fontSize: 17
+                    ),),
+                  leading:Container(
+                      height: 45,
+                      child: Image.asset("assets/images/kardio.png")) ,
+                  trailing: Icon(Icons.help),
+                ),
               ),
 
 
@@ -349,12 +410,21 @@ class _MyHomePageState extends State<MyHomePage> {
                             SizedBox(height: 12,),
                             Text("  Spor",style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 15
-                            ),),
-                            Text("   Sport for 2 hours",style: TextStyle(
-                                fontWeight: FontWeight.w300,
                                 fontSize: 12
-                            ),)
+                            ),),
+                            Row(
+                              children: [
+                                Text("  ${sporCard.sporHours}",style: TextStyle(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 12,
+                                    color: sporCard.currentColor
+                                ),),
+                                Text(" of 2 hours Sport",style: TextStyle(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 12
+                                ),)
+                              ],
+                            )
                           ],
                         ),
                       ),
@@ -367,8 +437,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 40,
                               child: new CircularProgressIndicator(
                                 strokeWidth: 3,
-                                value: 0.5,
-                                color: Colors.black,
+                                value: sporCard.sporBar,
+                                color: sporCard.currentColor,
                                 backgroundColor: Colors.grey,
 
 
@@ -376,7 +446,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           Center(
-                              child: Text("   100%",
+                              child: Text("   ${sporCard.sporHours*50}%",
                                 style: TextStyle(
                                   fontSize: 12
                                 ),)),
@@ -386,8 +456,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       Column(
                         children: [
                           SizedBox(height: 2,),
-                          Icon(Icons.add_circle),
-                          Icon(Icons.remove_circle_outlined)
+                          GestureDetector(
+                              onTap: (){setState(() {
+                                sporCard.hourseBarAdd();
+
+                                sporCard.add();
+                              });},
+                              child: Icon(Icons.add_circle)),
+                          GestureDetector(
+                            onTap: (){setState(() {
+                              sporCard.hourseBarRemove();
+                              sporCard.remove();
+                            });},
+                              child: Icon(Icons.remove_circle_outlined))
                         ],
                       )
 
@@ -422,10 +503,19 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontWeight: FontWeight.bold,
                               fontSize: 15
                           ),),
-                          Text("   8 of 8 hours sleep",style: TextStyle(
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12
-                          ),)
+                          Row(
+                            children: [
+                              Text("   ${sleepCard.sleepHours}",style: TextStyle(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 12,
+                                  color: sleepCard.currentColor
+                              ),)   ,
+                              Text(" of 8 hours sleep",style: TextStyle(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 12
+                              ),)
+                            ],
+                          )
                         ],
                       ),
                       SizedBox(width: 114,),
@@ -437,23 +527,41 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 40,
                               child: new CircularProgressIndicator(
                                 strokeWidth: 3,
-                                value: 0.5,
-                                color: Colors.black,
+                                value: sleepCard.sleepBar,
+                                color: sleepCard.currentColor,
                                 backgroundColor: Colors.grey,
 
 
                               ),
                             ),
                           ),
-                          Center(child: Text("  50%")),
+                          Center(child: Text("   ${sleepCard.sleepHours*13}%",
+                            style: TextStyle(
+                                fontSize: 12
+                            ),)),
                         ],
                       ),
                       SizedBox(width: 17,),
                       Column(
                         children: [
                           SizedBox(height: 2,),
-                          Icon(Icons.add_circle),
-                          Icon(Icons.remove_circle_outlined)
+                          GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  sleepCard.hourseBarAdd();
+                                  sleepCard.add();
+
+                                });
+                              },
+                              child: Icon(Icons.add_circle)),
+                          GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  sleepCard.hourseBarRemove();
+                                  sleepCard.remove();
+                                });
+                              },
+                              child: Icon(Icons.remove_circle_outlined))
                         ],
                       )
 
@@ -490,10 +598,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15
                             ),),
-                            Text("   1 cup",style: TextStyle(
-                                fontWeight: FontWeight.w300,
-                                fontSize: 12
-                            ),)
+                            Row(
+                              children: [
+                                Text("   ${waterCard.waterPieces}",style: TextStyle(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 12,
+                                    color: waterCard.currentColor
+                                ),),
+                                Text(" cup",style: TextStyle(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 12
+                                ),)
+                              ],
+                            )
                           ],
                         ),
                       ),
@@ -502,35 +619,35 @@ class _MyHomePageState extends State<MyHomePage> {
                           SizedBox(width: 7,),
                           SizedBox(
                             height: 20,
-                            child: Image.asset("assets/images/water.png"),
+                            child: Image.asset("assets/images/${waterCard.waterpieces8()}"),
                           ),
                           SizedBox(
                             height: 20,
-                            child: Image.asset("assets/images/water.png"),
+                            child: Image.asset("assets/images/${waterCard.waterpieces7()}"),
                           ),
                           SizedBox(
                             height: 20,
-                            child: Image.asset("assets/images/water.png"),
+                            child: Image.asset("assets/images/${waterCard.waterpieces6()}"),
                           ),
                           SizedBox(
                             height: 20,
-                            child: Image.asset("assets/images/water.png"),
+                            child: Image.asset("assets/images/${waterCard.waterpieces5()}"),
                           ),
                           SizedBox(
                             height: 20,
-                            child: Image.asset("assets/images/water.png"),
+                            child: Image.asset("assets/images/${waterCard.waterpieces4()}"),
                           ),
                           SizedBox(
                             height: 20,
-                            child: Image.asset("assets/images/water.png"),
+                            child: Image.asset("assets/images/${waterCard.waterpieces3()}"),
                           ),
                           SizedBox(
                             height: 20,
-                            child: Image.asset("assets/images/water.png"),
+                            child: Image.asset("assets/images/${waterCard.waterpieces2()}"),
                           ),
                           SizedBox(
                             height: 20,
-                            child: Image.asset("assets/images/water.png"),
+                            child: Image.asset("assets/images/${waterCard.waterpieces1()}"),
                           ),
                           SizedBox(width:1,),
 
@@ -544,23 +661,57 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 40,
                               child: new CircularProgressIndicator(
                                 strokeWidth: 3,
-                                value: 0.5,
-                                color: Colors.black,
+                                value: waterCard.waterBar,
+                                color: waterCard.currentColor,
                                 backgroundColor: Colors.grey,
 
 
                               ),
                             ),
                           ),
-                          Center(child: Text("     2")),
+                          Center(child: Text("   ${waterCard.waterPieces*12}%",
+                            style: TextStyle(
+                                fontSize: 12
+                            ),)),
                         ],
                       ),
                       SizedBox(width: 18,),
                       Column(
                         children: [
                           SizedBox(height: 2,),
-                          Icon(Icons.add_circle),
-                          Icon(Icons.remove_circle_outlined)
+                          GestureDetector(
+                              onTap: () {
+                               setState(() {
+                                 waterCard.waterBarAdd();
+                                 waterCard.add();
+                                 waterCard.waterImage1;
+                                 waterCard.waterImage2;
+                                 waterCard.waterImage3;
+                                 waterCard.waterImage4;
+                                 waterCard.waterImage5;
+                                 waterCard.waterImage6;
+                                 waterCard.waterImage7;
+                                 waterCard.waterImage8;
+                               });
+                              },
+                              child: Icon(Icons.add_circle)),
+                          GestureDetector(
+                              onTap: () {
+                            setState(() {
+                              waterCard.waterBarRemove();
+                              waterCard.remove();
+                              waterCard.waterImage1;
+                              waterCard.waterImage2;
+                              waterCard.waterImage3;
+                              waterCard.waterImage4;
+                              waterCard.waterImage5;
+                              waterCard.waterImage6;
+                              waterCard.waterImage7;
+                              waterCard.waterImage8;
+
+                            });
+                              },
+                              child: Icon(Icons.remove_circle_outlined))
                         ],
                       )
 
