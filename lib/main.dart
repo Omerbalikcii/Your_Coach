@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:your_coach/food.dart';
+import 'package:your_coach/foodCard.dart';
 import 'package:your_coach/sleepCard.dart';
 import 'package:your_coach/sporCard.dart';
 import 'package:your_coach/waterCard.dart';
+
+import 'chestMuscle/chestMain.dart';
 
 void main() {
   runApp(const MyApp());
@@ -86,34 +88,40 @@ class _MyHomePageState extends State<MyHomePage> {
                     )),
               ),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: const EdgeInsets.all(4.0),
                 child: Container(
 
-                  child: ListTile(
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(width: 2, color: Colors.black),
-                      borderRadius: BorderRadius.circular(10),
+                  child: GestureDetector(
+
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ChestMainPage()));
+                    },
+
+                    child: ListTile(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(width: 2, color: Colors.black),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      title: Text("  Chest Muscle",
+                        style: TextStyle(
+                          fontSize: 17
+                        ),),
+                      leading:Container(
+                          height: 50,
+                          child: Image.asset("assets/images/gogus.png")) ,
+                      trailing: Icon(Icons.help),
                     ),
-                    title: Text("  Chest Muscle",
-                      style: TextStyle(
-                        fontSize: 17
-                      ),),
-                    leading:Container(
-                        height: 50,
-                        child: Image.asset("assets/images/gogus.png")) ,
-                    trailing: Icon(Icons.help),
                   ),
                 ),
               ),
-              SizedBox(height: 1,),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: const EdgeInsets.all(4.0),
                 child: Container(
 
                   child: ListTile(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(width: 2, color: Colors.black),
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(30),
                     ),
                     title: Text("  Back Muscle",
                       style: TextStyle(
@@ -127,13 +135,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: const EdgeInsets.all(4.0),
                 child: Container(
 
                   child: ListTile(
                     shape: RoundedRectangleBorder(
                       side: BorderSide(width: 2, color: Colors.black),
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(30),
 
                     ),
                     title: Text("   Triceps muscle",
@@ -147,88 +155,130 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Container(
 
-                child: ListTile(
-                  title: Text("   Biceps Muscle",
-                    style: TextStyle(
-                        fontSize: 17
-                    ),),
-                  leading:Container(
-                      height: 45,
-                      child: Image.asset("assets/images/onkol.png")) ,
-                  trailing: Icon(Icons.help),
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(30),
+
+                    ),
+                    title: Text("   Biceps Muscle",
+                      style: TextStyle(
+                          fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 45,
+                        child: Image.asset("assets/images/onkol.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Container(
 
-                child: ListTile(
-                  title: Text("  Shoulder Muscle",
-                    style: TextStyle(
-                        fontSize: 17
-                    ),),
-                  leading:Container(
-                      height: 50,
-                      child: Image.asset("assets/images/omuz.png")) ,
-                  trailing: Icon(Icons.help),
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(30),
+
+                    ),
+                    title: Text("  Shoulder Muscle",
+                      style: TextStyle(
+                          fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 50,
+                        child: Image.asset("assets/images/omuz.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Container(
 
-                child: ListTile(
-                  title: Text("  Leg Muscle",
-                    style: TextStyle(
-                        fontSize: 17
-                    ),),
-                  leading:Container(
-                      height: 50,
-                      child: Image.asset("assets/images/bacak.png")) ,
-                  trailing: Icon(Icons.help),
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(30),
+
+                    ),
+                    title: Text("  Leg Muscle",
+                      style: TextStyle(
+                          fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 50,
+                        child: Image.asset("assets/images/bacak.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Container(
 
-                child: ListTile(
-                  title: Text("  Hip Muscle",
-                    style: TextStyle(
-                        fontSize: 17
-                    ),),
-                  leading:Container(
-                      height: 50,
-                      child: Image.asset("assets/images/hips.png")) ,
-                  trailing: Icon(Icons.help),
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(30),
+
+                    ),
+                    title: Text("  Hip Muscle",
+                      style: TextStyle(
+                          fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 50,
+                        child: Image.asset("assets/images/hips.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Container(
 
-                child: ListTile(
-                  title: Text("  Core Muscle",
-                    style: TextStyle(
-                        fontSize: 17
-                    ),),
-                  leading:Container(
-                      height: 45,
-                      child: Image.asset("assets/images/karın.png")) ,
-                  trailing: Icon(Icons.help),
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(30),
+
+                    ),
+                    title: Text("  Core Muscle",
+                      style: TextStyle(
+                          fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 45,
+                        child: Image.asset("assets/images/karın.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(border: Border(bottom: BorderSide(),)),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Container(
 
-                child: ListTile(
-                  title: Text("  Cardio Coach",
-                    style: TextStyle(
-                        fontSize: 17
-                    ),),
-                  leading:Container(
-                      height: 45,
-                      child: Image.asset("assets/images/kardio.png")) ,
-                  trailing: Icon(Icons.help),
+                  child: ListTile(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(width: 2, color: Colors.black),
+                      borderRadius: BorderRadius.circular(30),
+
+                    ),
+                    title: Text("  Cardio Coach",
+                      style: TextStyle(
+                          fontSize: 17
+                      ),),
+                    leading:Container(
+                        height: 45,
+                        child: Image.asset("assets/images/kardio.png")) ,
+                    trailing: Icon(Icons.help),
+                  ),
                 ),
               ),
 
