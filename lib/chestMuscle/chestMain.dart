@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:your_coach/chestMuscle/omuzAnatomi.dart';
+import 'package:your_coach/chestMuscle/omuzHareket.dart';
+
+import 'package:your_coach/chestMuscle/omuzTavsiye.dart';
 
 class ChestMainPage extends StatefulWidget {
   const ChestMainPage({Key? key}) : super(key: key);
@@ -33,16 +37,21 @@ class _ChestMainPageState extends State<ChestMainPage> {
               indicatorColor: Colors.deepOrangeAccent,
 
                 tabs: [
-                  Tab(text: "Omuz Kası \n Anatomisi",),
-                  Tab(text: "testde",),
-                  Tab(text: "testde",),
+                  Tab(text: "Omuz Kası \nAnatomisi",),
+                  Tab(text: "     Omuz\nHareketleri",),
+                  Tab(text: "   Antrenman \nİçin Tavsiyeler",),
 
                 ]) ,
             backgroundColor: Colors.blueGrey,
           ),
-          body: Container(
-            color: Colors.blueGrey,
-            child: Text("data"),
+          body: TabBarView(
+            children: [
+              omuzAnatomi(),
+              omuzHareket(),
+              omuzTavsiye()
+
+
+            ],
           ),
         ),
     );
